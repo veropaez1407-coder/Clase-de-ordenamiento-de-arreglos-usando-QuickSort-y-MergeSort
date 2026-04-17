@@ -1,0 +1,30 @@
+public class QuickSort {
+//metodo principal
+    public void ordenar(int[] numeros, int inicio, int fin) {
+    if (inicio < fin) {
+        int posicionPivote = partirpa(numeros, inicio, fin);
+        ordenar(numeros, inicio, posicionPivote - 1);
+        ordenar(numeros, posicionPivote + 1, fin);
+    }
+    }
+
+    private int partirpa(int[] numeros, int inicio, int fin) {
+    int pivote = numeros[fin];
+    int i = inicio - 1;
+
+    for (int j = inicio; j < fin; j++) {
+        if (numeros[j] <= pivote) {
+            i++;
+            int temp = numeros[i];
+            numeros[i] = numeros[j];
+            numeros[j] = temp;
+        }
+    }
+
+    int temp = numeros[i + 1];
+    numeros[i + 1] = numeros[fin];
+    numeros[fin] = temp;
+
+    return i + 1;
+    }
+}

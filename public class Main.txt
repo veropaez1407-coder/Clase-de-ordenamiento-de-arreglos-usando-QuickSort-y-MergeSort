@@ -1,0 +1,24 @@
+public class Main {
+//clase main donde se invocn, copian e imprimen ls clases y sus arreglos
+    public static void main(String[] args) {
+        int[] datos = {45, 12, 78, 3, 56, 99, 23, 7, 61, 34};
+        Arreglo arreglo = new Arreglo(datos);
+        arreglo.Show("Arreglo original");
+        int[] copiaQuick = arreglo.hacerCopiaaaa();
+        QuickSort qs = new QuickSort();
+        qs.ordenar(copiaQuick, 0, copiaQuick.length - 1);
+        System.out.println("QuickSort: ");
+        for (int i = 0; i < copiaQuick.length; i++) {
+            System.out.print(copiaQuick[i] + " ");
+        }
+        System.out.println();
+        int[] copiaMerge = arreglo.hacerCopiaaaa();
+        MergeSort ms = new MergeSort();
+        ms.ordenar(copiaMerge, 0, copiaMerge.length - 1);
+        System.out.println("MergeSort: ");
+        for (int i = 0; i < copiaMerge.length; i++) {
+            System.out.print(copiaMerge[i] + " ");
+        }
+        System.out.println();
+    }
+}
